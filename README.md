@@ -168,22 +168,22 @@ Choose the Algorithm:
          
          c) Aimed Algorithm: This is for testing paths. For the test, go to Assets/SavedData/Aimed.txt 
             Each line is a person in order (the line 1 is the person with id 0, the line 2 is the person with id 1...). For example, in aimed.txt: 
-                  *0 2 3*
-                  *0 2*
-                  *0 2 3 4*
+                  0 2 3
+                  0 2
+                  0 2 3 4
 
             In this case, the line 1 is the person with id 0 and its path is the nodes: 0 -> 2 -> 3. 
             If you don't indicate the first node, por example 0, it is not a problem. This looks like this, in aimed.txt: 
-                  *2 3*
-                  *2*
-                  *2 3 4*
+                  2 3
+                  2
+                  2 3 4
             Is the same path: 0 -> 2 -> 3.
           
          c) Aimed Algorithm - Indicate Person: This is for testing paths, but you indicate the person ID in the txt. For the test, go to Assets/SavedData/AimedIndicatePerson.txt 
             For example, in AimedIndicatePerson.txt: 
-                  *3 0 2 3*
-                  *1 0 2 3 4*
-                  *5 2 3*
+                  3 0 2 3
+                  1 0 2 3 4
+                  5 2 3
             In this case, the line 1 is the person with id 3 and its path is the nodes: 0 -> 2 -> 3. The line 2 is the person with id 1 and its path is the nodes: 0 -> 2 -> 3 -> 4. The line 3 is the person with id 5 and its path is the nodes: 0 -> 2 -> 3. Notice than in the line 3 we don't indicate the first node, it is not a problem. 
             
        3) Click "Finish" Option (Path Menu).
