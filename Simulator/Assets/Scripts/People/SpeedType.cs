@@ -1,0 +1,1 @@
+﻿public enum SpeedType {SLOW, NORMAL, FAST};

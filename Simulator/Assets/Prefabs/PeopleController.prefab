@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3465899715813202880
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8859498490727074156}
+  - component: {fileID: 8200328471746043118}
+  m_Layer: 0
+  m_Name: PeopleController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8859498490727074156
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3465899715813202880}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8200328471746043118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3465899715813202880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 758560e43da12364ab67962a1cbacabf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  personPrefab: {fileID: 6027175947477202664, guid: e894580a96d2d454f90c652a735a6794,
+    type: 3}
+  GLMat: {fileID: 2100000, guid: d4a309eadf5f5424da4629d72c1b52b1, type: 2}
+  MIMat: {fileID: 2100000, guid: 6ae3030f1a4885248b44f43cdf8d239d, type: 2}
+  FMMat: {fileID: 2100000, guid: 49c910268059e904eb321c5907447d69, type: 2}
+  BMat: {fileID: 2100000, guid: 78520aee963f5fc4fbbe556c5776de5e, type: 2}
+  peopleAutoReady: {fileID: 11400000, guid: f2f8aa53c21026b439f04c89d63aeb32, type: 2}
+  simulationReady: {fileID: 11400000, guid: bf394758156740c4ea33cd74651abaff, type: 2}
+  people: []
+  families: []

@@ -1,0 +1,1 @@
+﻿public enum PersonType {GROUP_LEADER, MOB_IMP, FAM};

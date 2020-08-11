@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 758560e43da12364ab67962a1cbacabf
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - personPrefab: {fileID: 6027175947477202664, guid: e894580a96d2d454f90c652a735a6794,
+      type: 3}
+  - GLMat: {instanceID: 0}
+  - MIMat: {instanceID: 0}
+  - FMMat: {instanceID: 0}
+  - BMat: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

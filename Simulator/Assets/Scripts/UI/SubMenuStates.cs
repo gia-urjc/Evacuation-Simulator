@@ -1,0 +1,1 @@
+﻿public enum SubMenuStates {create, move, edit}
