@@ -63,7 +63,17 @@ public class Graph: MonoBehaviour, IGraph, ISceneElement
 	public int EdgesCount(){return edges.Count;}
 	public List<Node> GetNodes(){return nodes;}
 	public List<Edge> GetEdges(){return edges;}
-	
+
+    // Sandra
+    public Node GetNode(int ID_)
+    {
+        foreach (Node node in nodes)
+        {
+            if (node.GetID().Equals(ID_)) return node;
+        }
+        return null;
+    }
+	// 
 	public Node ContainsNode(Section elem)
 	{
 		foreach(Node node in nodes)

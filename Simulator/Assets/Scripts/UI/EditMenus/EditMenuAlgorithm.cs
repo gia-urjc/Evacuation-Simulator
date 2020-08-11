@@ -29,12 +29,12 @@ public class EditMenuAlgorithm : EditMenu
     private void AlgCheck()
     {
         
+        sc.SetAlgorithm(alg_dd.captionText.text);
     }
 
     private void SetAlg()
     {
         alg_text.text = "Current: " + alg_dd.captionText.text;
-        sc.SetAlgorithm(alg_dd.captionText.text);
     }
 
 }

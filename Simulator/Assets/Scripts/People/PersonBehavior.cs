@@ -163,9 +163,7 @@ public class PersonBehavior : MonoBehaviour
 	{
 		if(startedMovement)
 		{
-            
-
-            if (reachedDestination && pathIndex<nodesPath.Count && pathIndex!=-1)
+            if (reachedDestination && pathIndex<nodesPath.Count && pathIndex!=-1)  
 			{
                 WhenIndependentReachedDestination();
 			}
@@ -183,6 +181,7 @@ public class PersonBehavior : MonoBehaviour
 
 					if(pathIndex<nodesPath.Count) nodesPath[pathIndex].AddOcupancy(followcount+1);
 				}
+                
 				if(pathIndex>=nodesPath.Count)
 				{
 					startedMovement = false;
@@ -190,7 +189,17 @@ public class PersonBehavior : MonoBehaviour
 					pathFinished = true;
 					timer = peopleController.GetSceneController().GetTimer();
 					destSection.PersonArrived(ID, timer);
-					peopleController.PersonArrived(this, timer);
+                    // 
+                    if (nodesPath[(nodesPath.Count)-1].GetIsCP())
+                    {
+                        peopleController.PersonArrived(this, timer, true);
+                    }
+                    else
+                    {
+                        Utils.Print("The Node is not a CP. Person " + ID + " is not safe!!");
+                        peopleController.PersonArrived(this, timer, false);
+                    }
+                    //
                     agent.avoidancePriority = 99;
                     if(ChangePriorityOverTimeCoroutine!=null) StopCoroutine(ChangePriorityOverTimeCoroutine);
 
@@ -210,12 +219,41 @@ public class PersonBehavior : MonoBehaviour
                         if (ChangePriorityOverTimeCoroutine != null) StopCoroutine(ChangePriorityOverTimeCoroutine);
                         timer = peopleController.GetSceneController().GetTimer();
 						destSection.PersonArrived(ID, timer);
-						peopleController.PersonArrived(this, timer);
-					}
-				}
+
+                        //
+                        if (peopleController.GetPersonArrived(tutorID))
+                        {
+                            peopleController.PersonArrived(this, timer, true);
+                        }
+                        else
+                        {
+                            peopleController.PersonArrived(this, timer, false);
+                            Utils.Print("The node is not a CP. Person dependent " + ID + " is not safe!!");
+                        }
+                        //
+                    }
+                }
 			}
-				
-		}
+            else if (nodesPath.Count <= 1 & !dependent) // If there is a unique node in the path and the person is not dependent
+            {
+                startedMovement = false;
+                agent.isStopped = true;
+                pathFinished = true;
+                timer = peopleController.GetSceneController().GetTimer();
+                destSection.PersonArrived(ID, timer);
+                peopleController.PersonArrived(this, timer, false);
+                Utils.Print("The node is not a CP. Person " + ID + " is not safe!!");
+                agent.avoidancePriority = 99;
+                if (ChangePriorityOverTimeCoroutine != null) StopCoroutine(ChangePriorityOverTimeCoroutine);
+                
+                foreach (PersonBehavior flw in followers)
+                {
+                    flw.SetPathFinished(true);
+                }
+            }
+
+
+        }
 
         myText.text = "P"+ID;
 		myText.transform.rotation = initialRot;
@@ -229,6 +267,7 @@ public class PersonBehavior : MonoBehaviour
     {
         reachedDestination = false;
         nextDependent = CheckDependentsInSection();
+        
         if (nextDependent != null)
         {
             agent.SetDestination(nextDependent.GetPos());
@@ -284,8 +323,7 @@ public class PersonBehavior : MonoBehaviour
 
 	public void StartMovement(int idx_)
 	{
-		
-		if(nodesPath.Count>0) 
+        if (nodesPath.Count>0) 
 		{
 		//	pathIndex = idx_;
 		//	destSection = nodesPath[nodesPath.Count-1].GetData();
@@ -354,6 +392,7 @@ public class PersonBehavior : MonoBehaviour
 			foreach(int i in responsibleForIDs)
 			{
 				found = f.FindMemberByID(i);
+
 				if(found.GetInitSection() == nodesPath[pathIndex-1].GetData()) return found;
 			}
 			return null;

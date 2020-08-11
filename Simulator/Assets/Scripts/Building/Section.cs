@@ -76,9 +76,10 @@ public class Section: MonoBehaviour
 		//Utils.Print("P"+ID_+" is here!");
         peopleArrivedCounter++;
         if(peopleArrivedCounter>=peopleAssigned.Count)
-		{ 
-			Utils.Print("Everyone has arrived to section "+ID+" in "+timer_+" seconds!");
-			timer = timer_;
+		{
+            //Utils.Print("A person has arrived to section "+ID+" in "+timer_+" seconds!");
+            Utils.Print("Current time: " + timer_ + " seconds!");
+            timer = timer_;
 		}
 	}
 	

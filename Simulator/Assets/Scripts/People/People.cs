@@ -19,6 +19,8 @@ public class People : MonoBehaviour, ISceneElement
     private bool alreadyBaked = false;
 
     private int peopleArrivedCounter;
+    private int peopleTotalCount;
+    private List <int> IDsPeopleArrivedToCP; 
     private float timer;
     private PersonBehavior lastArrivedPerson;
 
@@ -190,8 +192,10 @@ public class People : MonoBehaviour, ISceneElement
     public void StartMovement()
     {
         peopleArrivedCounter = 0;
+        peopleTotalCount = 0;
+        IDsPeopleArrivedToCP = new List<int>();
 
-        foreach(PersonBehavior p in people)
+        foreach (PersonBehavior p in people)
         {
             p.StartMovement(1);
         }
@@ -231,17 +235,35 @@ public class People : MonoBehaviour, ISceneElement
         simulationReady.Raise();
     }
 
-    public void PersonArrived(PersonBehavior p_, float timer_)
+    public void PersonArrived(PersonBehavior p_, float timer_, bool isInCP)
     {
-        peopleArrivedCounter++;
-        if(peopleArrivedCounter>=people.Count) 
+        // 
+        peopleTotalCount++;
+        
+        if (isInCP)
+        {
+            peopleArrivedCounter++;
+            IDsPeopleArrivedToCP.Add(p_.GetID());
+            Utils.Print("The person "+ p_.GetID() + " is safe in " + timer_ + "s in a CP!!");
+        }
+        if (peopleArrivedCounter >= people.Count)
         {
             timer = timer_;
-            Utils.Print("Everyone's safe in "+timer_+"s !!!!!!"); 
+            Utils.Print("Everyone is safe in " + timer_ + "s !!!!!!");
             lastArrivedPerson = p_;
-            foreach(PersonBehavior p in people) p.StopMovement();
+            foreach (PersonBehavior p in people) p.StopMovement();
             sc.SimulationFinished(true);
         }
+        //if (peopleTotalCount >= people.Count && peopleArrivedCounter < people.Count)
+        if (peopleTotalCount >= people.Count && peopleArrivedCounter < people.Count)
+        {
+            timer = timer_;
+            Utils.Print("Everyone is not safe in " + timer_ + "s !!!!!!");
+            lastArrivedPerson = p_;
+            foreach (PersonBehavior p in people) p.StopMovement();
+            sc.SimulationFinished(true);
+        }
+        //
     }
 
     public int AddFamily()
@@ -436,6 +458,7 @@ public class People : MonoBehaviour, ISceneElement
     public void ResetSimulation()
     {
         peopleArrivedCounter = 0;
+        peopleTotalCount = 0; 
         timer = 0f;
         lastArrivedPerson = null;
 
@@ -462,4 +485,9 @@ public class People : MonoBehaviour, ISceneElement
     public PersonBehavior GetLastArrivedPerson(){return lastArrivedPerson;}
     public PersonBehavior GetNextPerson(){return nextPerson;}
     public List<Family> GetFamilies(){ return families;}
+
+    public bool GetPersonArrived(int ID_) {
+        return (IDsPeopleArrivedToCP.Contains(ID_));
+    }
+        
 }

@@ -58,6 +58,7 @@ public class DummyOnlyIndependent: IAlgorithm
             {
                 assignedPath = actualPath;
                 minF = actualPath.f;
+                UnityEngine.Debug.LogWarning("Dummy ID N" + cpn.GetID().ToString());
             }
         }
 

@@ -133,6 +133,7 @@ public class SceneController : MonoBehaviour
 
 	public void RunAlgorithm()
 	{
+        UnityEngine.Debug.LogError("Algorithm: " + algorithm);
         float max = people.GetPeople().Count;
         LockUI();
         SetFeedback("Generating paths...");
@@ -142,11 +143,12 @@ public class SceneController : MonoBehaviour
         
 
 		List<Path> paths = algorithm.FindPaths(graph, people.GetPeople());
-
+        
 		foreach(Path p in paths)
 		{
-			p.person.SetNodesPath(p.path);
-			//p.path[p.path.Count-1].GetData().AddPerson(p.person);
+            p.person.SetNodesPath(p.path);
+            //p.path[p.path.Count-1].GetData().AddPerson(p.person);
+            
 		}
         
         tempAlgTime = ((float)generalStopWatch.Elapsed.TotalSeconds - beforeRun) + "s.";
@@ -654,9 +656,9 @@ public class SceneController : MonoBehaviour
 
 	// PATHS
 	public void PathsEdit(){ UnityEngine.Debug.Log("Paths edit mode"); ChangeToPaths(SubMenuStates.edit);}
-	public void PathsAuto(){ UnityEngine.Debug.Log("Create paths automatically"); ChangeToPaths(SubMenuStates.create); people.Bake();}
+    public void PathsAuto() { UnityEngine.Debug.Log("Create paths"); ChangeToPaths(SubMenuStates.create); people.Bake(); }
     public void PathsSet() { ChangeToPaths(SubMenuStates.edit); }
-	public void PathsFinish(){ UnityEngine.Debug.Log("Finish paths"); ChangeToSimulation();}
+    public void PathsFinish(){ UnityEngine.Debug.Log("Finish paths"); ChangeToSimulation();}
 	public void PathsBack(){ ChangeToPeople(SubMenuStates.edit);}
 
 	// SIMULATION
@@ -770,6 +772,8 @@ public class SceneController : MonoBehaviour
             case "Closest CP": algorithm = new DummyOnlyIndependent(); break;
             case "Random CP": algorithm = new AlgorithmB(); break;
             //case "Algorithm C": algorithm = new AlgorithmC(); break;
+            case "Aimed Algorithm": algorithm = new AimedAlgorithm(); break;
+            case "Aimed Algorithm - Indicate Person": algorithm = new AimedAlgorithmIndicatePerson(); break; 
             default: break;
         }
     }
