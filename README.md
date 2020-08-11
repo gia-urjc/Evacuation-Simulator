@@ -1,6 +1,5 @@
 # Evacuation Simulator 
 
-------------------------------
 ## Introduction
 
 The purpose of this simulator is simulates and allows visualization of the evacuation process of people located in buildings during emergencies. 
@@ -99,12 +98,14 @@ Create a new floor plan:
 ### "Graph" drop down Menu
 Create a new graph: 
 
-   a) 
-      1 - Click "Auto" Option (Graph Menu) for auto generate the path
+   a) Auto:
+   
+      1 - Click "Auto" Option (Graph Menu) for auto generate the graph
       
       2 - Click "Finish" Option (Graph Menu).
    
-   b) 
+   b) Create: 
+   
       1 - Click "Create" Option (Graph Menu): 
           Add node: Click L mouse button in a Section  
           Add edge: Press L mouse button in a node, move to other node, stop the press
@@ -147,9 +148,59 @@ You can create "Auto" (Option (Occupants Menu)) occupants or "Clear All" (Option
 Click "Finish" Option (Occupants Menu).
 
 ### "Paths" drop down Menu
-TO DO 
-          
+Choose the Algorithm: 
    
+   a) Auto: 
+   
+      1) Click "Auto" Option (Path Menu) for auto generate the path. Auto use the "Closest CP" Algorithm ( Assets/Scripts/Paths/DummyOnlyIndependent.cs).
+      
+      2) Click "Finish" Option (Path Menu).
+         
+   b) Choose: 
+      
+      1) Click "Set Algorithm" Option (Path Menu).
+      
+      2) Choose the Algorithm: 
+      
+         a) Closest CP
+         
+         b) Random CP
+         
+         c) Aimed Algorithm: This is for testing paths. For the test, go to Assets/SavedData/Aimed.txt 
+            Each line is a person in order (the line 1 is the person with id 0, the line 2 is the person with id 1...). For example, in aimed.txt: 
+                  *0 2 3*
+                  *0 2*
+                  *0 2 3 4*
+
+            In this case, the line 1 is the person with id 0 and its path is the nodes: 0 -> 2 -> 3. 
+            If you don't indicate the first node, por example 0, it is not a problem. This looks like this, in aimed.txt: 
+                  *2 3*
+                  *2*
+                  *2 3 4*
+            Is the same path: 0 -> 2 -> 3.
+          
+         c) Aimed Algorithm - Indicate Person: This is for testing paths, but you indicate the person ID in the txt. For the test, go to Assets/SavedData/AimedIndicatePerson.txt 
+            For example, in AimedIndicatePerson.txt: 
+                  *3 0 2 3*
+                  *1 0 2 3 4*
+                  *5 2 3*
+            In this case, the line 1 is the person with id 3 and its path is the nodes: 0 -> 2 -> 3. The line 2 is the person with id 1 and its path is the nodes: 0 -> 2 -> 3 -> 4. The line 3 is the person with id 5 and its path is the nodes: 0 -> 2 -> 3. Notice than in the line 3 we don't indicate the first node, it is not a problem. 
+            
+       3) Click "Finish" Option (Path Menu).
+
+### Start the simulation
+Click "PLAY" Button
+
+### "File" drop down Menu
+In the File Menu you can: 
+
+   a) "New" Option: Create new Simulation
+   
+   b) "Load" Option: Load a Save Simulation
+   
+   c) "Save" Option and "Save as.." Option: Save the current Simulation
+   
+   d) "Exit" Option: Close the Simulator
 
 ------------------------------
 ## Publications 
