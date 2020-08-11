@@ -20,7 +20,7 @@ The version 1.0.0 is a BSc thesis of the "Design and develop of videogames" Degr
 ------------------------------
 ## For Users 
 
-[] TODO
+- [] TODO
 
 ------------------------------
 ## For Developers
@@ -41,19 +41,19 @@ Please make sure that all the binaries are registered in your PATH.
 
 ### Getting Started for Development
 
-[] TODO
+- [] TODO
 
 ### General overview of the software architecture 
 
-[] TODO
+- [] TODO
 
 ### Setup
 
-[] TODO
+- [] TODO
 
 
 ### Build 
-[] TODO
+- [] TODO
 
 ### Introducing a new Algorithm 
 
@@ -74,8 +74,86 @@ Please make sure that all the binaries are registered in your PATH.
 Now, you can choose the algorithm in the simulator.  
 
 ------------------------------
+## Simulator Guide
+
+When you start the simulator, you can use "File", "Floor plan" and "Camera" drop down menus. 
+
+### "Floor plan" drop down Menu
+Create a new floor plan: 
+
+   1) Click "Create" Option (Floor plan Menu) > In the greenish rectangle you can draw the floor plan. 
+      Draw: Click L mouse button, move, Click L mouse button. 
+      Remove: Click R mouse button in the black line. 
+    
+      You can remove all with "Clear All" Option (Floor plan Menu). 
+      
+   2) Click "Create Sections" Option (Floor plan Menu).
+   
+   3) Click R mouse button in the black line for create DOORS
+   
+   4) Click "Edit" Option (Floor plan Menu), choose a Section and select "Is Collection Point". In Addition, with "Edit" you can choose the capacity of the sections. 
+   
+   5) Click "Finish" Option (Floor plan Menu).
+   
+
+### "Graph" drop down Menu
+Create a new graph: 
+
+   a) 
+      1 - Click "Auto" Option (Graph Menu) for auto generate the path
+      
+      2 - Click "Finish" Option (Graph Menu).
+   
+   b) 
+      1 - Click "Create" Option (Graph Menu): 
+          Add node: Click L mouse button in a Section  
+          Add edge: Press L mouse button in a node, move to other node, stop the press
+          
+      2 - Click "Finish" Option (Graph Menu).
+          
+You can use "Clear All" and "Clear Edges" Options (Graph Menu)
+
+### "Occupants" drop down Menu
+Create a new occupant, different types:  
+
+   a) Normal Occupant: 
+      
+      1) Choose the age and speed. 
+      
+      2) Put the occupant in a floor plan: Click L mouse button in a Section. 
+   
+   b) Mobility Impaired: 
+     
+      1) Choose the age and speed.
+      
+      2) Types > Add... > Mobility Impaired
+      
+      3) Put the occupant in a floor plan: Click L mouse button in a Section. 
+      
+   c) Family Member: 
+   
+      1) 
+         a) If is the first member: Click in "New" Button for create a new Family ID. 
+         
+         b) In another case: Select the Family ID. 
+         
+      2) 
+         a) If is the "Leader": When you have created the all family members, add the "Dependent" members in the "Responsible For" Option. (For that, click "Edit" Option (Occupants Menu) and touch the leader)
+         
+         b) In another case: Mark "Dependent" Option.
+
+You can create "Auto" (Option (Occupants Menu)) occupants or "Clear All" (Option (Occupants Menu)). 
+
+Click "Finish" Option (Occupants Menu).
+
+### "Paths" drop down Menu
+TO DO 
+          
+   
+
+------------------------------
 ## Publications 
-[] TODO
+- [] TODO
 
 ------------------------------
 ## Keywords
