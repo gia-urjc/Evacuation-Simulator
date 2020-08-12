@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{7C5B6A02-1B01-E967-5717-AFE0BC39E59D}</ProjectGuid>
+    <ProjectGuid>{A24E24AC-69F4-6A86-85DF-C52D51027E5E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>NavMeshComponentsEditor</AssemblyName>
@@ -301,25 +301,25 @@
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Advertisements">
-      <HintPath>C:/Users/sandr/Documents/Research/Documentacion/EvacuacionEdificios/SimuladorEvacuacionEdificios/SinRomper/TFG_Simulador-ANEXO/TFGv11/Library/PackageCache/com.unity.ads@2.3.1/Editor/UnityEditor.Advertisements.dll</HintPath>
+      <HintPath>C:/Users/sandr/Documents/Research/Documentacion/EvacuacionEdificios/SimuladorEvacuacionEdificios/ContinuamosAqui/Evacuation-Simulator/Simulator/Library/PackageCache/com.unity.ads@2.3.1/Editor/UnityEditor.Advertisements.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Advertisements">
-      <HintPath>C:/Users/sandr/Documents/Research/Documentacion/EvacuacionEdificios/SimuladorEvacuacionEdificios/SinRomper/TFG_Simulador-ANEXO/TFGv11/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.dll</HintPath>
+      <HintPath>C:/Users/sandr/Documents/Research/Documentacion/EvacuacionEdificios/SimuladorEvacuacionEdificios/ContinuamosAqui/Evacuation-Simulator/Simulator/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Advertisements.Editor">
-      <HintPath>C:/Users/sandr/Documents/Research/Documentacion/EvacuacionEdificios/SimuladorEvacuacionEdificios/SinRomper/TFG_Simulador-ANEXO/TFGv11/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.Editor.dll</HintPath>
+      <HintPath>C:/Users/sandr/Documents/Research/Documentacion/EvacuacionEdificios/SimuladorEvacuacionEdificios/ContinuamosAqui/Evacuation-Simulator/Simulator/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>C:/Users/sandr/Documents/Research/Documentacion/EvacuacionEdificios/SimuladorEvacuacionEdificios/SinRomper/TFG_Simulador-ANEXO/TFGv11/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>C:/Users/sandr/Documents/Research/Documentacion/EvacuacionEdificios/SimuladorEvacuacionEdificios/ContinuamosAqui/Evacuation-Simulator/Simulator/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/Users/sandr/Documents/Research/Documentacion/EvacuacionEdificios/SimuladorEvacuacionEdificios/SinRomper/TFG_Simulador-ANEXO/TFGv11/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/sandr/Documents/Research/Documentacion/EvacuacionEdificios/SimuladorEvacuacionEdificios/ContinuamosAqui/Evacuation-Simulator/Simulator/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>C:/Users/sandr/Documents/Research/Documentacion/EvacuacionEdificios/SimuladorEvacuacionEdificios/SinRomper/TFG_Simulador-ANEXO/TFGv11/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>C:/Users/sandr/Documents/Research/Documentacion/EvacuacionEdificios/SimuladorEvacuacionEdificios/ContinuamosAqui/Evacuation-Simulator/Simulator/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Purchasing">
-      <HintPath>C:/Users/sandr/Documents/Research/Documentacion/EvacuacionEdificios/SimuladorEvacuacionEdificios/SinRomper/TFG_Simulador-ANEXO/TFGv11/Library/PackageCache/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll</HintPath>
+      <HintPath>C:/Users/sandr/Documents/Research/Documentacion/EvacuacionEdificios/SimuladorEvacuacionEdificios/ContinuamosAqui/Evacuation-Simulator/Simulator/Library/PackageCache/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.14f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -678,7 +678,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="NavMeshComponents.csproj">
-      <Project>{08685A4C-08AD-683F-BD09-7268200F3F44}</Project>
+      <Project>{362FF681-1447-B885-253C-F6E2786C3E41}</Project>
       <Name>NavMeshComponents</Name>
     </ProjectReference>
   </ItemGroup>

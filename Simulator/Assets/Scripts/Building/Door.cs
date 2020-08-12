@@ -6,14 +6,16 @@ using UnityEngine.EventSystems;
 
 public class Door : MonoBehaviour
 {
-	private int ID;
+    private int ID;
 	private List<Tile> tiles;
 	private Section connectionA, connectionB;
 	private int maxCapacity;
 	private int currentCapacity;
+    [SerializeField] private bool isStair;
 
-	public void Setup(int id_, List<Tile> t_, Section s1_, Section s2_)
+    public void Setup(int id_, List<Tile> t_, Section s1_, Section s2_)
 	{
+        isStair = false; 
 		tiles = new List<Tile>();
 		ID = id_;
 		tiles = t_;
@@ -74,16 +76,34 @@ public class Door : MonoBehaviour
 		else return null;
 	}
 
+    public void Paint()
+    {
+        // Re-color room if it's Stair
+        Color randomColor = Random.ColorHSV(0.3f, 0.7f, 0.3f, 0.5f, 0.5f, 0.8f);
+        foreach (Tile t in tiles)
+        {
+            if (isStair) { t.GetRenderer().material.color = new Color32(255, 69, 69, 255); } //RedColor 
+            else t.GetRenderer().material.color = randomColor;
+        }
+    }
 
 
-	public int 			GetID(){ return ID;}
+
+    public int 			GetID(){ return ID;}
 	public int 			GetMaxCapacity(){ return maxCapacity;}
 	public int 			GetCurrentCapacity(){ return currentCapacity;}
 	public Vector3 		GetPos(){return tiles[0].GetPos();}
 	public Section[] 	GetConnections(){Section[] aux = new Section[2]; aux[0] = connectionA; aux[1] = connectionB; return aux;}
 	public List<Tile> 	GetTiles(){return tiles;}
-	
-	public void SetID(int ID_){ID = ID_;}
+    public bool GetIsStair() { return isStair; }
+
+    public void SetID(int ID_){ID = ID_;}
 	public void SetMaxCapacity(int c_){maxCapacity = c_;}
 	public void SetCurrentCapacity(int c_){currentCapacity = c_;}
+    public void SetIsStair(bool st_) {
+        isStair = st_;
+        Paint();
+        //map?.ToggleSectionCP(this); 
+    }
+
 }
