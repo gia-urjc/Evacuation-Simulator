@@ -170,7 +170,11 @@ public class Section: MonoBehaviour
 
     public void AddTile(Tile t){ tiles.Add(t); maxCapacity++; currentCapacity++; area = maxCapacity * .25f; }
 	public void RemoveTile(Tile t){ tiles.Remove(t); maxCapacity--; currentCapacity--; area = maxCapacity * .25f; }
-	public void AddDoor(Door d){doors.Add(d);}
+    public void AddDoor(Door d) { doors.Add(d); }
+    public void AddDoorIsStair(Door d)
+    {
+        map?.ToggleDoorStair(d);
+    }
 	public void RemoveDoor(Door d_){doors.Remove(d_);}
 	public void AddCorner(Vector3 c_){corners.Add(c_);}
 	public void PrintCorners()

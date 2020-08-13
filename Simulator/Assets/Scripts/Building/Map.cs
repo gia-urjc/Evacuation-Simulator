@@ -17,7 +17,8 @@ public class Map : MonoBehaviour, ISceneElement
 
 	private List<List<Tile>> tiles;
 	[SerializeField] private List<Section> sections, cpSections;
-	private List<Door> doors;
+    
+    private List<Door> doors, doorsStair;
 	int currentSectionID, currentDoorID;
 
     private Vector3 initClickedPos = Vector3.positiveInfinity, actualClickedPos = Vector3.positiveInfinity, endClickedPos = Vector3.positiveInfinity;
@@ -41,6 +42,7 @@ public class Map : MonoBehaviour, ISceneElement
 		tiles = new List<List<Tile>>();
 		sections = new List<Section>();
  		cpSections = new List<Section>();
+        doorsStair = new List<Door>();
 		doors = new List<Door>();
 
 		sectionsBuilt = false;
@@ -496,7 +498,13 @@ public class Map : MonoBehaviour, ISceneElement
 		else {cpSections.Remove(s_); /*sc.GetSceneInfo().numberOfCPSections -= 1;*/}
 	}
 
-	public Section GetRandomCP()
+    public void ToggleDoorStair(Door d_)
+    {
+        if (d_.GetIsStair()) { if (!doorsStair.Contains(d_)) { doorsStair.Add(d_); /*sc.GetSceneInfo().numberOfCPSections += 1;*/ } }
+        else { doorsStair.Remove(d_); /*sc.GetSceneInfo().numberOfCPSections -= 1;*/}
+    }
+
+    public Section GetRandomCP()
 	{
 		int total = cpSections.Count;
 		if(total > 0)
@@ -579,8 +587,10 @@ public class Map : MonoBehaviour, ISceneElement
 		}
 		
 		cpSections.Clear();
+        doorsStair.Clear();
 
-		foreach(Section s in sections)
+
+        foreach (Section s in sections)
 		{
 			Destroy(s.gameObject);
 		}
@@ -833,6 +843,7 @@ public class Map : MonoBehaviour, ISceneElement
 
     public List<Section> GetSections() { return sections;}
     public List<Section> GetCPSections() { return cpSections; }
+    public List<Door> GetDoorsStair() { return doorsStair; }
     public List<Door> GetDoors(){ return doors;}
 	public int GetWidth(){return width;}
 	public int GetHeight(){return height;}

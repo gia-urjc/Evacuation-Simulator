@@ -103,7 +103,8 @@ public class Door : MonoBehaviour
     public void SetIsStair(bool st_) {
         isStair = st_;
         Paint();
-        //map?.ToggleSectionCP(this); 
+        connectionA.AddDoorIsStair(this);
+        connectionB.AddDoorIsStair(this);
     }
 
 }
