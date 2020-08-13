@@ -82,7 +82,7 @@ public class Door : MonoBehaviour
         Color randomColor = Random.ColorHSV(0.3f, 0.7f, 0.3f, 0.5f, 0.5f, 0.8f);
         foreach (Tile t in tiles)
         {
-            if (isStair) { t.GetRenderer().material.color = new Color32(255, 69, 69, 255); } //RedColor 
+            if (isStair) { t.GetRenderer().material.color = Color.blue; } //new Color32(255, 69, 69, 255); } //RedColor 
             else t.GetRenderer().material.color = randomColor;
         }
     }

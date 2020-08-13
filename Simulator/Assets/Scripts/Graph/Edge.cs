@@ -9,18 +9,25 @@ public class Edge: MonoBehaviour
 	[SerializeField] private Node[] nodes = new Node[2];
 	[SerializeField] private float distance;
 	private int maxCapacity, currentCapacity;
+    private bool isStair;
+    MeshRenderer renderer;
 
-	public void Setup(int ID_, Door data_, Node nodeA_, Node nodeB_)
+    public void Setup(int ID_, Door data_, Node nodeA_, Node nodeB_, bool isStair_)
 	{
-		name = "Edge";
+        renderer = GetComponent<MeshRenderer>();
+        name = "Edge";
 		ID = ID_;
 		data = data_;
-		nodes[0] = nodeA_;
+        isStair = isStair_;
+
+        nodes[0] = nodeA_;
 		nodes[1] = nodeB_;
 
 		if(data!=null)maxCapacity = data.GetCurrentCapacity();
 		else maxCapacity = 500;
 		currentCapacity = maxCapacity;
+
+        
 	}
 	
 	public void CalculateDistance()
@@ -31,6 +38,12 @@ public class Edge: MonoBehaviour
 	
 	public Door GetData() {return data;}
 	public float GetDistance(){return distance;}
+    public bool GetIsStair() { return isStair; }
+    public void setIsStair()
+    {
+        isStair = true;
+        renderer.material.color = Color.magenta;
+    }
 	public void SetData(Door data_) {data = data_;}
 	
 	
@@ -48,6 +61,14 @@ public class Edge: MonoBehaviour
 
 	public void PaintEdge()
 	{
+        if (isStair)
+        {
+            renderer.material.color = Color.blue;
+            //renderer.material.SetColor("Magenta",Color.magenta);
+           
+            Debug.Log("pintado");
+
+        }
 		Vector3 dir = (nodes[0].transform.position - nodes[1].transform.position).normalized;
 		if(dir.x+dir.y+dir.z != 0f)
 		{

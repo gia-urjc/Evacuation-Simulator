@@ -40,11 +40,12 @@ public class Graph: MonoBehaviour, IGraph, ISceneElement
 	
 	public Edge InsertEdge(Door elem, Node linkA, Node linkB)
 	{
+        Debug.LogError("DOOR ID: "+ elem.GetID()); 
 		Vector3 pos = this.transform.position;
 		if(elem!=null){ pos = new Vector3 (elem.GetPos().x, this.transform.position.y, elem.GetPos().z);}
 
 		Edge newEdge = GameObject.Instantiate(edgePrefab, pos, Quaternion.Euler(90f,0,0),this.transform).GetComponent<Edge>();
-		newEdge.Setup(currentEdgeID++, elem, linkA, linkB);
+		newEdge.Setup(currentEdgeID++, elem, linkA, linkB, elem.GetIsStair());
 		edges.Add(newEdge);
 		linkA.AddAdjacentEdge(newEdge);
 		linkB.AddAdjacentEdge(newEdge);
@@ -235,7 +236,8 @@ public class Graph: MonoBehaviour, IGraph, ISceneElement
                 {
                     Edge edge = ContainsEdge(startNode, finishNode);
                     if(edge != null) DeleteEdge(edge);
-                    else edge = InsertEdge(null, startNode, finishNode);
+                    //else edge = InsertEdge(null, startNode, finishNode);
+                    else edge = InsertEdge(connectiondoor, startNode, finishNode);
                 }
             }
             startNode = null;
