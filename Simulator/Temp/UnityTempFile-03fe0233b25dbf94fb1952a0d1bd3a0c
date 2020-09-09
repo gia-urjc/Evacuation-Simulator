@@ -6,6 +6,13 @@
 /nostdlib+
 /preferreduilang:en-US
 /langversion:latest
+/reference:Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll
+/reference:Library/ScriptAssemblies/NavMeshComponentsEditor.dll
+/reference:Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll
+/reference:Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll
+/reference:Library/ScriptAssemblies/NavMeshComponents.dll
+/reference:Library/ScriptAssemblies/Unity.TextMeshPro.dll
+/reference:Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll
 /reference:"C:\Program Files\Unity\Hub\Editor\2018.3.14f1\Editor\Data\Managed/UnityEngine/UnityEngine.dll"
 /reference:"C:\Program Files\Unity\Hub\Editor\2018.3.14f1\Editor\Data\Managed/UnityEngine/UnityEngine.AIModule.dll"
 /reference:"C:\Program Files\Unity\Hub\Editor\2018.3.14f1\Editor\Data\Managed/UnityEngine/UnityEngine.ARModule.dll"
@@ -68,13 +75,6 @@
 /reference:"C:\Program Files\Unity\Hub\Editor\2018.3.14f1\Editor\Data\Managed/UnityEngine/UnityEngine.XRModule.dll"
 /reference:"C:\Program Files\Unity\Hub\Editor\2018.3.14f1\Editor\Data\Managed/UnityEditor.dll"
 /reference:"C:\Program Files\Unity\Hub\Editor\2018.3.14f1\Editor\Data\Managed/Unity.Locator.dll"
-/reference:Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll
-/reference:Library/ScriptAssemblies/NavMeshComponentsEditor.dll
-/reference:Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll
-/reference:Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll
-/reference:Library/ScriptAssemblies/NavMeshComponents.dll
-/reference:Library/ScriptAssemblies/Unity.TextMeshPro.dll
-/reference:Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll
 /reference:"C:/Program Files/Unity/Hub/Editor/2018.3.14f1/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2018.3.14f1/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2018.3.14f1/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll"

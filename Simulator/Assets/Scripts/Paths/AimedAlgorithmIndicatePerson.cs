@@ -44,11 +44,12 @@ public class AimedAlgorithmIndicatePerson : IAlgorithm
         {
 
             string[] nodesLines = line.Split(' ');
+
             int personID = Convert.ToInt32(nodesLines[0]);
             
             if (personID >= 0)
             {
-                Debug.LogError("Persona ID:" + personID);
+                Debug.LogError("Persona ID1:" + personID);
                 peopleInFile.Add(people_[personID]);
                 if (people_[personID].GetDependent())
                 {
@@ -59,28 +60,37 @@ public class AimedAlgorithmIndicatePerson : IAlgorithm
                     PersonBehavior person = people_[personID];
                     List<Node> personPath = new List<Node>();
                     int lastNodeID = person.GetInitNode().GetID();
+                    // PONER personPath.Add(person.GetInitNode());
                     float fperson = 0;
-
+                    path = new Path(person, personPath, fperson);
+                    while (count != personID){
+                        if (!people_[count].GetDependent())
+                        {
+                            personPath.Add(person.GetInitNode());
+                            path = new Path(person, personPath, fperson);
+                            if (path != null) foundPaths.Add(path); else Utils.Print("PERSON WITHOUT PATH");
+                        }
+                        peopleInFile.Add(people_[count]);
+                        count++;
+                    }
                     if (peopleInFile.Contains(people_[count]))
                     {
-
                         for (int j = 1; j < nodesLines.Length; j++)
                         //foreach (string nodeL in nodesLines)
                         {
-
-                            if (nodesLines[j].Equals(person.GetInitNode().GetID())) // We See if the second number is the first node
+                            int currentlyNode = Convert.ToInt32(nodesLines[j]);
+                            if (currentlyNode.Equals(person.GetInitNode().GetID())) // We See if the second number is the first node
                             {
-                                personPath.Add(person.GetInitNode());
+                                personPath.Add(person.GetInitNode()); // quitar
                                 lastNodeID = person.GetInitNode().GetID();
 
                                 path = new Path(person, personPath, fperson);
-                                if (path != null) foundPaths.Add(path); else Utils.Print("PERSON W/O PATH");
+                                if (path != null) foundPaths.Add(path); else Utils.Print("PERSON WITHOUT PATH");
                             }
                             else
                             {
-                                if (!nodesLines[j].Equals(" ") && (!nodesLines[j].Equals("")))
-                                {
-                                    int currentlyNode = Convert.ToInt32(nodesLines[j]);
+                                //if ((!nodesLines[j].Equals(" ")) && (!nodesLines[j].Equals("")))
+                                //{
                                     if (graph_.GetNodes().Contains(graph_.GetNode(currentlyNode))) // If the node exists 
                                     {
                                         //if (graph_.GetAdjacentNodes(graph_.GetNode(lastNodeID)).Contains(graph_.GetNode(currentlyNode)))
@@ -89,34 +99,22 @@ public class AimedAlgorithmIndicatePerson : IAlgorithm
                                         fperson = fperson + graph_.GetNode(lastNodeID).ConnectedTo(graph_.GetNode(currentlyNode)).GetDistance();
                                         lastNodeID = currentlyNode;
                                         path = new Path(person, personPath, fperson);
-                                        if (path != null) foundPaths.Add(path); else Utils.Print("PERSON W/O PATH");
+                                        if (path != null) foundPaths.Add(path); else Utils.Print("PERSON WITHOUT PATH");
                                         //}
                                     }
                                     else
                                     {
                                         Debug.LogError("The Node " + currentlyNode + ", line " + count + ", in the txt doesn't exit");
                                     }
-                                }
+                                //}
                             }
                         }
                         count++;
-                    }
+                    }/*
                     else
                     {
-                        if (people_[count].GetDependent())
-                        {
-                            count++;
-                        }
-                        else
-                        {
-                            personPath.Add(person.GetInitNode());
-                            path = new Path(person, personPath, fperson);
-                            if (path != null) foundPaths.Add(path); else Utils.Print("PERSON W/O PATH");
-                            count++;
-                        }
-                        peopleInFile.Add(people_[count]);
-                        count++;
-                    }
+                        
+                    }*/
                 }
                 else
                 {
