@@ -65,9 +65,6 @@ public class Edge: MonoBehaviour
         {
             renderer.material.color = Color.blue;
             //renderer.material.SetColor("Magenta",Color.magenta);
-           
-            Debug.Log("pintado");
-
         }
 		Vector3 dir = (nodes[0].transform.position - nodes[1].transform.position).normalized;
 		if(dir.x+dir.y+dir.z != 0f)

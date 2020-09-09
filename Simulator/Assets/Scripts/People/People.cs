@@ -255,7 +255,7 @@ public class People : MonoBehaviour, ISceneElement
             sc.SimulationFinished(true);
         }
         //if (peopleTotalCount >= people.Count && peopleArrivedCounter < people.Count)
-        if (peopleTotalCount >= people.Count && peopleArrivedCounter < people.Count)
+        if (peopleTotalCount >= (people.Count) && peopleArrivedCounter < people.Count)
         {
             timer = timer_;
             Utils.Print("Everyone is not safe in " + timer_ + "s !!!!!!");

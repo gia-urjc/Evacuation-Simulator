@@ -40,7 +40,6 @@ public class Graph: MonoBehaviour, IGraph, ISceneElement
 	
 	public Edge InsertEdge(Door elem, Node linkA, Node linkB)
 	{
-        Debug.LogError("DOOR ID: "+ elem.GetID()); 
 		Vector3 pos = this.transform.position;
 		if(elem!=null){ pos = new Vector3 (elem.GetPos().x, this.transform.position.y, elem.GetPos().z);}
 
