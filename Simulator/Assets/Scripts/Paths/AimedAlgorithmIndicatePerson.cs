@@ -28,7 +28,6 @@ public class AimedAlgorithmIndicatePerson : IAlgorithm
     }
 
     private List<Node> CPNodes;
-    //private List<Element> personPath;
 
 
     public List<Path> FindPaths(Graph graph_, List<PersonBehavior> people_)
@@ -40,13 +39,13 @@ public class AimedAlgorithmIndicatePerson : IAlgorithm
         string line;
         List<PersonBehavior> peopleInFile = new List<PersonBehavior>();
         System.IO.StreamReader file = new System.IO.StreamReader(Directory.GetCurrentDirectory() + @"\Assets\SavedData\aimedIndicatePerson.txt");
-        while ((line = file.ReadLine()) != null)
+        while (((line = file.ReadLine()) != null) && (count < people_.Count))
         {
-
+            
             string[] nodesLines = line.Split(' ');
 
             int personID = Convert.ToInt32(nodesLines[0]);
-            
+
             if (personID >= 0)
             {
                 Debug.LogError("Persona ID1:" + personID);
@@ -55,102 +54,58 @@ public class AimedAlgorithmIndicatePerson : IAlgorithm
                 {
                     count++;
                 }
-                else if (count < people_.Count)
+                else
                 {
                     PersonBehavior person = people_[personID];
                     List<Node> personPath = new List<Node>();
                     int lastNodeID = person.GetInitNode().GetID();
-                    // PONER personPath.Add(person.GetInitNode());
+                    personPath.Add(person.GetInitNode());
                     float fperson = 0;
                     path = new Path(person, personPath, fperson);
-                    while (count != personID){
-                        if (!people_[count].GetDependent())
-                        {
-                            personPath.Add(person.GetInitNode());
-                            path = new Path(person, personPath, fperson);
-                            if (path != null) foundPaths.Add(path); else Utils.Print("PERSON WITHOUT PATH");
-                        }
-                        peopleInFile.Add(people_[count]);
-                        count++;
-                    }
-                    if (peopleInFile.Contains(people_[count]))
+                    
+                    for (int j = 1; j < nodesLines.Length; j++)
                     {
-                        for (int j = 1; j < nodesLines.Length; j++)
-                        //foreach (string nodeL in nodesLines)
+                        int currentlyNode = Convert.ToInt32(nodesLines[j]);
+                        if (!(currentlyNode.Equals(person.GetInitNode().GetID()))) // We See if the second number is the first node
                         {
-                            int currentlyNode = Convert.ToInt32(nodesLines[j]);
-                            if (currentlyNode.Equals(person.GetInitNode().GetID())) // We See if the second number is the first node
+                            if (graph_.GetNodes().Contains(graph_.GetNode(currentlyNode))) // If the node exists 
                             {
-                                personPath.Add(person.GetInitNode()); // quitar
-                                lastNodeID = person.GetInitNode().GetID();
-
+                                personPath.Add(graph_.GetNode(currentlyNode));
+                                fperson = fperson + graph_.GetNode(lastNodeID).ConnectedTo(graph_.GetNode(currentlyNode)).GetDistance();
+                                lastNodeID = currentlyNode;
                                 path = new Path(person, personPath, fperson);
                                 if (path != null) foundPaths.Add(path); else Utils.Print("PERSON WITHOUT PATH");
+                                
                             }
                             else
                             {
-                                //if ((!nodesLines[j].Equals(" ")) && (!nodesLines[j].Equals("")))
-                                //{
-                                    if (graph_.GetNodes().Contains(graph_.GetNode(currentlyNode))) // If the node exists 
-                                    {
-                                        //if (graph_.GetAdjacentNodes(graph_.GetNode(lastNodeID)).Contains(graph_.GetNode(currentlyNode)))
-                                        //{
-                                        personPath.Add(graph_.GetNode(currentlyNode));
-                                        fperson = fperson + graph_.GetNode(lastNodeID).ConnectedTo(graph_.GetNode(currentlyNode)).GetDistance();
-                                        lastNodeID = currentlyNode;
-                                        path = new Path(person, personPath, fperson);
-                                        if (path != null) foundPaths.Add(path); else Utils.Print("PERSON WITHOUT PATH");
-                                        //}
-                                    }
-                                    else
-                                    {
-                                        Debug.LogError("The Node " + currentlyNode + ", line " + count + ", in the txt doesn't exit");
-                                    }
-                                //}
+                                Debug.LogError("The Node " + currentlyNode + ", line " + count + ", in the txt doesn't exit");
                             }
                         }
-                        count++;
-                    }/*
-                    else
-                    {
-                        
-                    }*/
+                    }
+                    count++;
                 }
-                else
-                {
-                    Debug.LogError("More data that persons in txt");
-                }
-            }
-        }
-        file.Close();
-
-        /*int countAllPeople = 0; 
-        while (count < people_.Count)
-        {
-            if (peopleInFile.Contains(people_[countAllPeople]))
-            {
-                countAllPeople++;
             }
             else
             {
-                if (people_[countAllPeople].GetDependent())
-                {
-                    count++;
-                }
-                else
-                {
-                    PersonBehavior person = people_[countAllPeople];
-                    List<Node> personPath = new List<Node>();
-                    float fperson = 0;
-                    personPath.Add(person.GetInitNode());
-                    path = new Path(person, personPath, fperson);
-                    if (path != null) foundPaths.Add(path); else Utils.Print("PERSON W/O PATH");
-                    count++;
-                }
-                peopleInFile.Add(people_[countAllPeople]);
-                countAllPeople++;
+                Debug.LogError("Only accept Person ID > 0");
             }
-        }*/
+            
+        }
+        file.Close();
+
+        for(int i=0; i<people_.Count; i++)
+        {
+            if (!peopleInFile.Contains(people_[i]))
+            {
+                PersonBehavior person = people_[i];
+                List<Node> personPath = new List<Node>();
+                personPath.Add(person.GetInitNode());
+                float fperson = 0;
+                path = new Path(person, personPath, fperson);
+                if (path != null) foundPaths.Add(path); else Utils.Print("PERSON WITHOUT PATH");
+            }
+        }
 
         return foundPaths;
 

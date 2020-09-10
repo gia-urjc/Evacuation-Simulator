@@ -1,6 +1,6 @@
 /target:library
 /nowarn:0169
-/out:Temp/Unity.Analytics.DataPrivacy.dll
+/out:Temp/Assembly-CSharp.dll
 /debug:portable
 /optimize-
 /nostdlib+
@@ -68,27 +68,23 @@
 /reference:"C:\Program Files\Unity\Hub\Editor\2018.3.14f1\Editor\Data\Managed/UnityEngine/UnityEngine.XRModule.dll"
 /reference:"C:\Program Files\Unity\Hub\Editor\2018.3.14f1\Editor\Data\Managed/UnityEditor.dll"
 /reference:"C:\Program Files\Unity\Hub\Editor\2018.3.14f1\Editor\Data\Managed/Unity.Locator.dll"
+/reference:Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll
+/reference:Library/ScriptAssemblies/NavMeshComponentsEditor.dll
+/reference:Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll
+/reference:Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll
+/reference:Library/ScriptAssemblies/NavMeshComponents.dll
+/reference:Library/ScriptAssemblies/Unity.TextMeshPro.dll
+/reference:Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll
 /reference:"C:/Program Files/Unity/Hub/Editor/2018.3.14f1/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll"
-/reference:"C:/Program Files/Unity/Hub/Editor/2018.3.14f1/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2018.3.14f1/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll"
-/reference:"C:/Program Files/Unity/Hub/Editor/2018.3.14f1/Editor/Data/UnityExtensions/Unity/Timeline/Editor/UnityEditor.Timeline.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2018.3.14f1/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll"
-/reference:"C:/Program Files/Unity/Hub/Editor/2018.3.14f1/Editor/Data/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll"
-/reference:"C:/Program Files/Unity/Hub/Editor/2018.3.14f1/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/Editor/UnityEditor.GoogleAudioSpatializer.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2018.3.14f1/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll"
-/reference:"C:/Program Files/Unity/Hub/Editor/2018.3.14f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/Editor/UnityEditor.SpatialTracking.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2018.3.14f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll"
-/reference:"C:/Program Files/Unity/Hub/Editor/2018.3.14f1/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll"
-/reference:"C:/Program Files/Unity/Hub/Editor/2018.3.14f1/Editor/Data/Managed/UnityEditor.Graphs.dll"
-/reference:"C:/Program Files/Unity/Hub/Editor/2018.3.14f1/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll"
-/reference:"C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll"
-/reference:C:/Users/Sandrus/Documents/Research/Documentacion/EvacuacionEdificios/SimuladorEvacuacionEdificios/ContinuamosAqui/Evacuation-Simulator/Simulator/Library/PackageCache/com.unity.ads@2.3.1/Editor/UnityEditor.Advertisements.dll
 /reference:C:/Users/Sandrus/Documents/Research/Documentacion/EvacuacionEdificios/SimuladorEvacuacionEdificios/ContinuamosAqui/Evacuation-Simulator/Simulator/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.dll
 /reference:C:/Users/Sandrus/Documents/Research/Documentacion/EvacuacionEdificios/SimuladorEvacuacionEdificios/ContinuamosAqui/Evacuation-Simulator/Simulator/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.Editor.dll
 /reference:C:/Users/Sandrus/Documents/Research/Documentacion/EvacuacionEdificios/SimuladorEvacuacionEdificios/ContinuamosAqui/Evacuation-Simulator/Simulator/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll
 /reference:C:/Users/Sandrus/Documents/Research/Documentacion/EvacuacionEdificios/SimuladorEvacuacionEdificios/ContinuamosAqui/Evacuation-Simulator/Simulator/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll
 /reference:C:/Users/Sandrus/Documents/Research/Documentacion/EvacuacionEdificios/SimuladorEvacuacionEdificios/ContinuamosAqui/Evacuation-Simulator/Simulator/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll
-/reference:C:/Users/Sandrus/Documents/Research/Documentacion/EvacuacionEdificios/SimuladorEvacuacionEdificios/ContinuamosAqui/Evacuation-Simulator/Simulator/Library/PackageCache/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll
 /reference:"C:\Program Files\Unity\Hub\Editor\2018.3.14f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll"
 /reference:"C:\Program Files\Unity\Hub\Editor\2018.3.14f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\Microsoft.Win32.Primitives.dll"
 /reference:"C:\Program Files\Unity\Hub\Editor\2018.3.14f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.AppContext.dll"
@@ -305,6 +301,57 @@
 /define:UNITY_PRO_LICENSE
 /define:CSHARP_7_OR_LATER
 /define:CSHARP_7_3_OR_NEWER
-C:\Users\Sandrus\Documents\Research\Documentacion\EvacuacionEdificios\SimuladorEvacuacionEdificios\ContinuamosAqui\Evacuation-Simulator\Simulator\Library\PackageCache\com.unity.analytics@3.2.2\DataPrivacy\AssemblyInfo.cs
-C:\Users\Sandrus\Documents\Research\Documentacion\EvacuacionEdificios\SimuladorEvacuacionEdificios\ContinuamosAqui\Evacuation-Simulator\Simulator\Library\PackageCache\com.unity.analytics@3.2.2\DataPrivacy\DataPrivacy.cs
-C:\Users\Sandrus\Documents\Research\Documentacion\EvacuacionEdificios\SimuladorEvacuacionEdificios\ContinuamosAqui\Evacuation-Simulator\Simulator\Library\PackageCache\com.unity.analytics@3.2.2\DataPrivacy\DataPrivacyButton.cs
+Assets\Scripts\Building\Door.cs
+Assets\Scripts\Building\Map.cs
+Assets\Scripts\Building\Section.cs
+Assets\Scripts\Building\Tile.cs
+Assets\Scripts\Graph\Edge.cs
+Assets\Scripts\Graph\Graph.cs
+Assets\Scripts\Graph\IGraph.cs
+Assets\Scripts\Graph\Node.cs
+Assets\Scripts\Misc_\CameraMovement.cs
+Assets\Scripts\Misc_\DataController.cs
+Assets\Scripts\Misc_\EventGameObject.cs
+Assets\Scripts\Misc_\GameEvent.cs
+Assets\Scripts\Misc_\GameEventListener.cs
+Assets\Scripts\Misc_\ISceneElement.cs
+Assets\Scripts\Misc_\LayerToggle.cs
+Assets\Scripts\Misc_\ScenariosManager.cs
+Assets\Scripts\Misc_\SceneController.cs
+Assets\Scripts\Misc_\SceneInfo.cs
+Assets\Scripts\Misc_\TextInfoController.cs
+Assets\Scripts\Misc_\UIFPSDisplayer.cs
+Assets\Scripts\Misc_\Utils.cs
+Assets\Scripts\Paths\AimedAlgorithm.cs
+Assets\Scripts\Paths\AimedAlgorithmIndicatePerson.cs
+Assets\Scripts\Paths\AimedAlgorithmTest.cs
+Assets\Scripts\Paths\AlgorithmB.cs
+Assets\Scripts\Paths\AlgorithmC.cs
+Assets\Scripts\Paths\DummyAlgorithm.cs
+Assets\Scripts\Paths\DummyOnlyIndependent.cs
+Assets\Scripts\Paths\IAlgorithm.cs
+Assets\Scripts\Paths\Path.cs
+Assets\Scripts\Paths\pruebita.cs
+Assets\Scripts\People\Family.cs
+Assets\Scripts\People\People.cs
+Assets\Scripts\People\PersonBehavior.cs
+Assets\Scripts\People\PersonType.cs
+Assets\Scripts\People\SpeedType.cs
+Assets\Scripts\UI\EditMenus\EditMenu.cs
+Assets\Scripts\UI\EditMenus\EditMenuAlgorithm.cs
+Assets\Scripts\UI\EditMenus\EditMenuAutoPeople.cs
+Assets\Scripts\UI\EditMenus\EditMenuDoor.cs
+Assets\Scripts\UI\EditMenus\EditMenuEdge.cs
+Assets\Scripts\UI\EditMenus\EditMenuNode.cs
+Assets\Scripts\UI\EditMenus\EditMenuPath.cs
+Assets\Scripts\UI\EditMenus\EditMenuPerson.cs
+Assets\Scripts\UI\EditMenus\EditMenuSection.cs
+Assets\Scripts\UI\Menu.cs
+Assets\Scripts\UI\MenuButton.cs
+Assets\Scripts\UI\MenuFile.cs
+Assets\Scripts\UI\MenuFileLoad.cs
+Assets\Scripts\UI\MenuFileNew.cs
+Assets\Scripts\UI\MenuFileSave.cs
+Assets\Scripts\UI\MenuStates.cs
+Assets\Scripts\UI\SubMenuButton.cs
+Assets\Scripts\UI\SubMenuStates.cs
