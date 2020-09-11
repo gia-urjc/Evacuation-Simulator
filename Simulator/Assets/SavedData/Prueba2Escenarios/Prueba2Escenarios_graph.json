@@ -1,1 +1,0 @@
-{"nodes":[{"ID":0,"sectionID":0,"maxCapacity":396,"currentCapacity":396,"isCP":false,"adjacentEdgesIDs":[0],"pos":{"x":11.0,"y":4.0,"z":13.0}},{"ID":1,"sectionID":1,"maxCapacity":418,"currentCapacity":418,"isCP":true,"adjacentEdgesIDs":[0],"pos":{"x":24.0,"y":4.0,"z":13.0}}],"edges":[{"ID":0,"doorID":-1,"maxCapacity":500,"currentCapacity":500,"distance":13.0,"nodes":[0,1]}]}
