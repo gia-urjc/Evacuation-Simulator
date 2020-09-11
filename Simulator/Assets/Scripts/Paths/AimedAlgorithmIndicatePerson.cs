@@ -39,6 +39,7 @@ public class AimedAlgorithmIndicatePerson : IAlgorithm
         string line;
         List<PersonBehavior> peopleInFile = new List<PersonBehavior>();
         System.IO.StreamReader file = new System.IO.StreamReader(Directory.GetCurrentDirectory() + @"\Assets\SavedData\aimedIndicatePerson.txt");
+
         while (((line = file.ReadLine()) != null) && (count < people_.Count))
         {
             
@@ -66,7 +67,7 @@ public class AimedAlgorithmIndicatePerson : IAlgorithm
                     for (int j = 1; j < nodesLines.Length; j++)
                     {
                         int currentlyNode = Convert.ToInt32(nodesLines[j]);
-                        if (!(currentlyNode.Equals(person.GetInitNode().GetID()))) // We See if the second number is the first node
+                        if (!(currentlyNode.Equals(person.GetInitNode().GetID())) && (currentlyNode!= -1)) // We See if the second number is the first node
                         {
                             if (graph_.GetNodes().Contains(graph_.GetNode(currentlyNode))) // If the node exists 
                             {
@@ -96,7 +97,7 @@ public class AimedAlgorithmIndicatePerson : IAlgorithm
 
         for(int i=0; i<people_.Count; i++)
         {
-            if (!peopleInFile.Contains(people_[i]))
+            if (!(peopleInFile.Contains(people_[i])) && !(people_[i].GetDependent()))
             {
                 PersonBehavior person = people_[i];
                 List<Node> personPath = new List<Node>();
