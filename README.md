@@ -14,9 +14,9 @@ Here you'll find all the necessary documentation to use and develop new features
 
 ------------------------------
 ## Author - v1.0.0
-The version 1.0.0 is a BSc thesis of the "Design and develop of videogames" Degree - Rey Juan Carlos University, written by Sandra Valverde Tallón @svalverdet, and directed by Sascha Ossowski and Qasim Khalid. 
+The version 1.0.0 is a BSc thesis of the "Design and develop of videogames" Degree - Rey Juan Carlos University, written by Sandra Valverde Tallón (Github: @svalverdet ), and directed by Sascha Ossowski and Qasim Khalid. 
 ## Author - v2.0.0
-Improvements: Sandra Gómez-Gálvez. 
+Improvements: Sandra Gómez-Gálvez (Github: @sandruskyi )
 
 ------------------------------
 ## For Users 
